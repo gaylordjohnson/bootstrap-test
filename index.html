@@ -7,27 +7,30 @@
 
     <!-- Bootstrap CSS. Must come first -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
-    <style>
-      div[class^="col"] {
-        border:1px dashed red;
-      }
-    </style>
   </head>
 
   <body>
     <!---------------- My stuff below -------------------->
-    <div class="container" style="border:1px solid yellowgreen">
-      <div class="example">
-        <div class="row">
-          <div class="col-sm-1">1</div>
-          <div class="col-sm-2">2</div>
-          <div class="col-sm-4">4</div>
-          <div class="col-sm-5">5</div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12" id="mainForm">
+          <h1>My form</h1>
+          <form action="/submit?exp_traq_name=default" method="post" autocomplete="off">
+            <div class="form-group">
+              <label for="amount">Dollar amount</label>
+              <input class="form-control" id="amount" name="amount" type="number" step="1" required autofocus placeholder="Integer amount">
+            </div>
+            <div class="form-group">
+              <label for="input_field">Payee</label>
+              <input class="form-control" id="input_field" name="payee" type="text" required placeholder="Payee" onkeyup="inputChanged(this)"></input>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>          
         </div>
       </div>
     </div>
     <!---------------------------------------------------->
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
