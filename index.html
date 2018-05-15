@@ -11,25 +11,76 @@
 
   <body>
     <!---------------- My stuff below -------------------->
+    <!-- Version of the form with horizontal form groups -->
     <div class="container">
+      <div id="mainForm">
+        <h1>Hello</h1>
+        <form action="/submit?exp_traq_name=default" method="post" autocomplete="off">
+          <div class="form-group row">
+            <label class="col-2 col-form-label col-form-label-sm">Amount</label>
+            <div class="col-10">
+              <input class="form-control form-control-sm" name="amount" type="number" step="1" required autofocus>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-2 col-form-label col-form-label-sm">Payee</label>
+            <div class="col-10">
+              <input class="form-control form-control-sm" id="input_field" name="payee" type="text" required onkeyup="inputChanged(this)">
+            </div>
+          </div>
+
+          <div class="form-group row" id="dateField"> <!-- initially hidden; see CSS -->
+            <label class="col-2 col-form-label col-form-label-sm">Date</label>
+            <div class="col-10">
+              <input class="form-control form-control-sm" name="date" type="date">
+            </div>
+          </div>
+
+          <div class="form-group row" id="commentField"> <!-- initially hidden; see CSS -->
+            <label class="col-2 col-form-label col-form-label-sm">Notes</label>
+            <div class="col-10">
+              <textarea class="form-control form-control-sm" name="comment" rows="2"></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-sm float-right">Save</button>
+        </form>          
+      </div>
+    </div>
+
+    <!-- Below is the version with stacked form elements -->
+<!--     <div class="container">
       <div class="row">
         <div class="col-12" id="mainForm">
-          <h1>My form</h1>
+          <h1>Hello!</h1>
           <form action="/submit?exp_traq_name=default" method="post" autocomplete="off">
             <div class="form-group">
-              <label for="amount">Dollar amount</label>
-              <input class="form-control" id="amount" name="amount" type="number" step="1" required autofocus placeholder="Integer amount">
+              <label>Amount</label>
+              <input class="form-control" name="amount" type="number" step="1" required autofocus>
             </div>
+
             <div class="form-group">
-              <label for="input_field">Payee</label>
-              <input class="form-control" id="input_field" name="payee" type="text" required placeholder="Payee" onkeyup="inputChanged(this)"></input>
+              <label>Payee</label>
+              <input class="form-control" id="input_field" name="payee" type="text" required onkeyup="inputChanged(this)">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+
+            <div class="form-group" id="dateField">
+              <label>Date</label>
+              <input class="form-control" name="date" type="date">
+            </div>
+
+            <div class="form-group" id="commentField">
+              <label>Comment</label>
+              <textarea class="form-control" name="comment" rows="2"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save</button>
           </form>          
         </div>
       </div>
     </div>
-    <!---------------------------------------------------->
+ -->    <!---------------------------------------------------->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
